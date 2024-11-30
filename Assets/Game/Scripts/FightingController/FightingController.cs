@@ -30,10 +30,12 @@ public class FightingController : MonoBehaviour
     [Header("Player Health")]
     public int maxHealth = 100;
     public int currentHealth;
+    public HealthBar healthBar;
 
 
     private void Awake()
     {
+        
         characterController = GetComponent<CharacterController>();
         if (characterController == null)
             Debug.LogError("CharacterController component is missing.");
@@ -43,6 +45,7 @@ public class FightingController : MonoBehaviour
             Debug.LogError("Animator component is missing.");
 
         currentHealth = maxHealth;
+        healthBar.GiveFullHealth(currentHealth);
     }
 
     private void Update()
@@ -151,6 +154,7 @@ public class FightingController : MonoBehaviour
 
         //decrease health
         currentHealth -= takeDamage;
+        healthBar.SetHealth(currentHealth);
         if(currentHealth <= 0)
         {
             Die();

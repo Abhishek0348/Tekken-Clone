@@ -33,12 +33,14 @@ public class OpponentAI : MonoBehaviour
     [Header("Player Health")]
     public int maxHealth = 100;
     public int currentHealth;
+    public HealthBar healthBar;
 
 
     private void Awake()
     {
         createRandomNumber();
         currentHealth = maxHealth;
+        healthBar.GiveFullHealth(currentHealth);
 
     }
 
@@ -126,6 +128,7 @@ public class OpponentAI : MonoBehaviour
 
         //decrease health
         currentHealth -= takeDamage;
+        healthBar.SetHealth(currentHealth);
         if (currentHealth <= 0)
         {
             Die();
