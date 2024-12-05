@@ -54,22 +54,22 @@ public class FightingController : MonoBehaviour
         PerformDodgeFront();
 
         // Different keys for each attack
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             Debug.Log("Q pressed: Performing Attack 1");
             PerformAttack(0);
         }
-        else if (Input.GetKeyDown(KeyCode.E))
+        else if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             Debug.Log("E pressed: Performing Attack 2");
             PerformAttack(1);
         }
-        else if (Input.GetKeyDown(KeyCode.R))
+        else if (Input.GetKeyDown(KeyCode.Alpha3))
         {
             Debug.Log("R pressed: Performing Attack 3");
             PerformAttack(2);
         }
-        else if (Input.GetKeyDown(KeyCode.T))
+        else if (Input.GetKeyDown(KeyCode.Alpha4))
         {
             Debug.Log("T pressed: Performing Attack 4");
             PerformAttack(3);
